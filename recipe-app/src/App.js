@@ -1,12 +1,10 @@
 import React,{useEffect, useState} from "react";
 import './App.css';
-
-const api_id = process.env.REACT_APP_APP_ID;
-const api_key = process.env.REACT_APP_APP_KEY;
-
-const [recipes, setRecipes] = useState([]);
-
 const App = () => {
+  const api_id = process.env.REACT_APP_APP_ID;
+  const api_key = process.env.REACT_APP_APP_KEY;
+
+  const [recipes, setRecipes] = useState([]);
 
   useEffect( () => {
   getRecipes();
