@@ -1,13 +1,16 @@
 import React,{useEffect, useState} from "react";
+import Recipe from "./Recipe";
 import './App.css';
+
+
 const App = () => {
   const api_id = process.env.REACT_APP_APP_ID;
   const api_key = process.env.REACT_APP_APP_KEY;
 
   const [recipes, setRecipes] = useState([]);
 
-  useEffect( () => {
-  getRecipes();
+  useEffect(() => {
+   getRecipes();
   }, []);
 
   const getRecipes = async () => {
@@ -24,6 +27,13 @@ const App = () => {
          Search
         </button>
       </form>
+      {recipes.map(recipe =>(
+        <Recipe 
+        title={recipe.recipe.title} 
+        calories={recipe.recipe.calories} 
+        recipe={recipe.recipe.image} 
+        />
+      ))}
     </div>
   )
 }
