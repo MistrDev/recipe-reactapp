@@ -18,6 +18,7 @@ const App = () => {
     const data = await response.json()
     setRecipes(data.hits);
   }
+ // Cant figure out why im getting a CORS error. response has keys undefined //
 
   return(
     <div className="App">
